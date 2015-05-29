@@ -1,0 +1,10 @@
+nodejs:
+  image: dalekurt/nodejs
+  ports:
+    - "80:5000"
+
+logentries:
+  image: logentries/docker-logentries
+  command: "-t TOKEN -j -a host=`uname -n`"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
